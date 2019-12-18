@@ -1,6 +1,29 @@
 <template>
-    <div>
-        foobar
+    <div class="message is-info">
+        <div class="message-header">
+            Push to the stream
+        </div>
+
+        <div class="message-body">
+            <form @submit.prevent="onSubmit">
+                <div class="field">
+<!--                    <label class="label">New Message</label>-->
+                    <div class="control">
+                        <textarea class="textarea" placeholder="leave a message"></textarea>
+                    </div>
+                </div>
+                <div class="field is-grouped">
+                    <div class="field is-grouped">
+                        <div class="control">
+                            <button class="button is-info is-link">Submit</button>
+                        </div>
+                        <div class="control">
+                            <button class="button is-info is-link is-light">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
     </div>
 </template>
 
@@ -8,8 +31,11 @@
     export default {
         props: [''],
 
-        data() {
-            return {
+        data(){
+            return {}
+        },
+        methods: {
+            onSubmit() {
 
             }
         }

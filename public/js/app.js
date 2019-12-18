@@ -1844,10 +1844,36 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: [''],
   data: function data() {
     return {};
+  },
+  methods: {
+    onSubmit: function onSubmit() {}
   }
 });
 
@@ -37207,9 +37233,62 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_vm._v("\n    foobar\n")])
+  return _c("div", { staticClass: "message is-info" }, [
+    _c("div", { staticClass: "message-header" }, [
+      _vm._v("\n            Push to the stream\n        ")
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "message-body" }, [
+      _c(
+        "form",
+        {
+          on: {
+            submit: function($event) {
+              $event.preventDefault()
+              return _vm.onSubmit($event)
+            }
+          }
+        },
+        [_vm._m(0), _vm._v(" "), _vm._m(1)]
+      )
+    ])
+  ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "field" }, [
+      _c("div", { staticClass: "control" }, [
+        _c("textarea", {
+          staticClass: "textarea",
+          attrs: { placeholder: "leave a message" }
+        })
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "field is-grouped" }, [
+      _c("div", { staticClass: "field is-grouped" }, [
+        _c("div", { staticClass: "control" }, [
+          _c("button", { staticClass: "button is-info is-link" }, [
+            _vm._v("Submit")
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "control" }, [
+          _c("button", { staticClass: "button is-info is-link is-light" }, [
+            _vm._v("Cancel")
+          ])
+        ])
+      ])
+    ])
+  }
+]
 render._withStripped = true
 
 
