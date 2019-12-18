@@ -2,8 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="de281e15-5a1a-4625-a178-fba81a0374d0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/letz.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/utilities/Errors.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/utilities/Form.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Status.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Status.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/AddToStream.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/AddToStream.vue" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -159,7 +165,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1576591125978</updated>
-      <workItem from="1576591127095" duration="13506000" />
+      <workItem from="1576591127095" duration="16480000" />
     </task>
     <servers />
   </component>

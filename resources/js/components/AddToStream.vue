@@ -9,7 +9,9 @@
                 <div class="field">
 <!--                    <label class="label">New Message</label>-->
                     <div class="control">
-                        <textarea class="textarea" placeholder="leave a message"></textarea>
+                        <textarea class="textarea" placeholder="leave a message"
+                                  v-model="form.body"
+                        ></textarea>
                     </div>
                 </div>
                 <div class="field is-grouped">
@@ -32,11 +34,13 @@
         props: [''],
 
         data(){
-            return {}
+            return {
+                form: new Form({ body:''})
+            }
         },
         methods: {
             onSubmit() {
-
+                this.form.post('/statuses').then(status => alert('All done'));
             }
         }
     }
