@@ -7,7 +7,8 @@
                         <div class="message-header">
                             <p>{{ status.user.name }} said...</p>
                             <p>
-                                A moment ago
+                                <!--                                {{ // postedOn(status)}}-->
+                                {{ status.created_at| ago | capitalize }}
                             </p>
                         </div>
                         <div class="message-body" v-text="status.body">
@@ -20,16 +21,36 @@
 </template>
 
 <script>
+    import moment from 'moment';
+    import Status from "../models/Status";
+
     export default {
         data(){
             return {
                 statuses: [],
             }
         },
+
+
         created(){
             // console.log('Component Mounted.')
-            axios.get('/statuses')
-                 .then( ({data}) => this.statuses = data);
+            Status
+                .all(statuses => this.statuses = statuses);
+        },
+
+        filters: {
+            ago(date){
+                return moment(date).fromNow();
+            },
+            capitalize(value){
+                return value.toUpperCase();
+            },
+        },
+
+        methods: {
+            // postedOn(status){
+            //     return moment(status.created_at).fromNow();
+            // },
         },
 
 
