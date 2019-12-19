@@ -36,7 +36,7 @@ class Form {
      */
     reset() {
         for (let field in this.originalData) {
-            this[field] = '';
+            this[field] = this.originalData[field];
         }
 
         this.errors.clear();
@@ -112,6 +112,8 @@ class Form {
      * @param {object} data
      */
     onSuccess(data) {
+        // alert(data.message);
+
         this.reset();
     }
 
@@ -122,7 +124,7 @@ class Form {
      * @param {object} errors
      */
     onFail(errors) {
-        this.errors.record(errors);
+        this.errors.record(errors.errors);
     }
 }
 

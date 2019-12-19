@@ -1869,6 +1869,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: [''],
   data: function data() {
@@ -37267,6 +37273,9 @@ var render = function() {
             submit: function($event) {
               $event.preventDefault()
               return _vm.onSubmit($event)
+            },
+            keydown: function($event) {
+              return _vm.form.errors.clear()
             }
           }
         },
@@ -37293,32 +37302,39 @@ var render = function() {
                     _vm.$set(_vm.form, "body", $event.target.value)
                   }
                 }
-              })
+              }),
+              _vm._v(" "),
+              _vm.form.errors.has("body")
+                ? _c("span", {
+                    staticClass: "help is-danger",
+                    domProps: {
+                      textContent: _vm._s(_vm.form.errors.get("body"))
+                    }
+                  })
+                : _vm._e()
             ])
           ]),
           _vm._v(" "),
-          _vm._m(0)
+          _c("div", { staticClass: "field is-grouped" }, [
+            _c("div", { staticClass: "field is-grouped" }, [
+              _c("div", { staticClass: "control" }, [
+                _c(
+                  "button",
+                  {
+                    staticClass: "button is-info is-link",
+                    attrs: { disabled: _vm.form.errors.any() }
+                  },
+                  [_vm._v("Submit")]
+                )
+              ])
+            ])
+          ])
         ]
       )
     ])
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "field is-grouped" }, [
-      _c("div", { staticClass: "field is-grouped" }, [
-        _c("div", { staticClass: "control" }, [
-          _c("button", { staticClass: "button is-info is-link" }, [
-            _vm._v("Submit")
-          ])
-        ])
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -52885,7 +52901,7 @@ function () {
     key: "reset",
     value: function reset() {
       for (var field in this.originalData) {
-        this[field] = '';
+        this[field] = this.originalData[field];
       }
 
       this.errors.clear();
@@ -52967,6 +52983,7 @@ function () {
   }, {
     key: "onSuccess",
     value: function onSuccess(data) {
+      // alert(data.message);
       this.reset();
     }
     /**
@@ -52978,7 +52995,7 @@ function () {
   }, {
     key: "onFail",
     value: function onFail(errors) {
-      this.errors.record(errors);
+      this.errors.record(errors.errors);
     }
   }]);
 
