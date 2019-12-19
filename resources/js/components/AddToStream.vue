@@ -19,9 +19,9 @@
                         <div class="control">
                             <button class="button is-info is-link">Submit</button>
                         </div>
-                        <div class="control">
-                            <button class="button is-info is-link is-light">Cancel</button>
-                        </div>
+<!--                        <div class="control">-->
+<!--                            <button class="button is-info is-link is-light">Cancel</button>-->
+<!--                        </div>-->
                     </div>
                 </div>
             </form>
@@ -40,7 +40,9 @@
         },
         methods: {
             onSubmit() {
-                this.form.post('/statuses').then(status => alert('All done'));
+                // this.form.post('/statuses').then(status => alert('All done'));
+                this.form.post('/statuses')
+                    .then(status => this.$emit('completed', status));
             }
         }
     }

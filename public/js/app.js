@@ -1880,8 +1880,11 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     onSubmit: function onSubmit() {
+      var _this = this;
+
+      // this.form.post('/statuses').then(status => alert('All done'));
       this.form.post('/statuses').then(function (status) {
-        return alert('All done');
+        return _this.$emit('completed', status);
       });
     }
   }
@@ -1981,6 +1984,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 
@@ -2009,9 +2013,16 @@ __webpack_require__.r(__webpack_exports__);
       return value.toUpperCase();
     }
   },
-  methods: {// postedOn(status){
+  methods: {
+    addStatus: function addStatus(status) {
+      this.statuses.unshift(status); //push X -> unshift O
+
+      alert('Your status has been added to the stream');
+      window.scrollTo(0, 0);
+    } // postedOn(status){
     //     return moment(status.created_at).fromNow();
     // },
+
   }
 });
 
@@ -37303,12 +37314,6 @@ var staticRenderFns = [
           _c("button", { staticClass: "button is-info is-link" }, [
             _vm._v("Submit")
           ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "control" }, [
-          _c("button", { staticClass: "button is-info is-link is-light" }, [
-            _vm._v("Cancel")
-          ])
         ])
       ])
     ])
@@ -37428,6 +37433,8 @@ var render = function() {
           "div",
           { staticClass: "column" },
           [
+            _c("add-to-stream", { on: { completed: _vm.addStatus } }),
+            _vm._v(" "),
             _vm._l(_vm.statuses, function(status) {
               return _c("div", { staticClass: "message" }, [
                 _c("div", { staticClass: "message-header" }, [
@@ -37449,9 +37456,7 @@ var render = function() {
                   domProps: { textContent: _vm._s(status.body) }
                 })
               ])
-            }),
-            _vm._v(" "),
-            _c("add-to-stream")
+            })
           ],
           2
         )
