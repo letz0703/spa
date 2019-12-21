@@ -1875,6 +1875,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: [''],
   data: function data() {
@@ -37325,6 +37327,22 @@ var render = function() {
                     attrs: { disabled: _vm.form.errors.any() }
                   },
                   [_vm._v("Submit")]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "control" }, [
+                _c(
+                  "button",
+                  {
+                    staticClass: "button is-info is-link is-light",
+                    on: {
+                      click: function($event) {
+                        $event.preventDefault()
+                        return _vm.form.reset()
+                      }
+                    }
+                  },
+                  [_vm._v("Cancel")]
                 )
               ])
             ])

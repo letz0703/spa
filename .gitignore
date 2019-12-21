@@ -33,3 +33,5 @@ resources/views/icanmart.html
 
 *.xml
 .idea/workspace.xml
+public/js/app.js
+public/js/app.js

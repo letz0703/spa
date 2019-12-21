@@ -25,9 +25,11 @@
                                     :disabled="form.errors.any()"
                             >Submit</button>
                         </div>
-<!--                        <div class="control">-->
-<!--                            <button class="button is-info is-link is-light">Cancel</button>-->
-<!--                        </div>-->
+                        <div class="control">
+                            <button class="button is-info is-link is-light"
+                                    @click.prevent="form.reset()"
+                            >Cancel</button>
+                        </div>
                     </div>
                 </div>
             </form>
